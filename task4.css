@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+nav span{
+    margin: 140px;
+}
+nav {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}  
+button {
+    background-color: skyblue;
+    border-radius: 5px;
+}
+div{
+    border:  solid black 2px;
+}
