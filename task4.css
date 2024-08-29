@@ -17,3 +17,10 @@ div{
     border:  solid black 2px;
     background-color: red;
 }
+#content2 {
+    background-color: yellow;
+
+}
+#content3{
+    background-color: blue;
+}
