@@ -15,12 +15,22 @@ button {
 }
 div{
     border:  solid black 2px;
-    background-color: red;
+    background-color: rgb(221, 8, 8,0.5);
+    padding: 5px;
+    height: 50px;
 }
 #content2 {
-    background-color: yellow;
+    background-color: rgba(217, 233, 3, 0.5);
+    border: solid black 2px;
+    height: 103px;
 
 }
 #content3{
-    background-color: blue;
+    background-color: rgb(13, 235, 61);
+    border: solid black 2px;
+    height: 104px;
+}
+div{
+    height: 100px;
+    width: 100px;
 }
