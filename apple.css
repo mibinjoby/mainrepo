@@ -1,10 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 nav {
     background-color: aliceblue;
-    padding: 5px;
+    padding: 15px;
+    color: black;
+    text-align: center;
 }
 nav span{
-    margin-top: 5px;
-    margin-right: 140px;
-    margin-bottom: 5px;
-    margin-left: 5px;
+    padding: 8px;
+    margin: 0px 10px 0px 10px;
+}
+ul{
+    
 }
