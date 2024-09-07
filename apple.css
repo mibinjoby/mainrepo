@@ -56,4 +56,16 @@ section ul {
 .ipad:hover ~ .section-2 {
     display: block;
 }
+#Event{
+    position:relative;
+    top: 500px;
+    left: 125px;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+
     
