@@ -63,11 +63,16 @@ nav{
 
  }
 
-.right section .right-sub-section{
+.right section .right-sub-section .img{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
     padding: 0px 15px 0px 15px;
+}
+
+.nav2 img{
+    width: 20px;
+    height: 5px;
  }
 
