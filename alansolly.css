@@ -71,8 +71,39 @@ nav{
     padding: 0px 15px 0px 15px;
 }
 
+/*.nav2 {
+    background-color: white;
+}
+
 .nav2 img{
-    width: 20px;
-    height: 5px;
+    width: 250px;
+    height: 50px;                                           ;
  }
+
+ .head{
+    display: flex;
+    justify-content:space-between;
+    color: black;
+    margin: opx 50px;
+    padding: 0px 20px 0px 20px;
+ }
+
+ .right-section span{
+    color: black;
+
+ }
+
+ button{
+    border-radius: 50px;
+ }
+
+ .button{
+    background-color: rgb(219, 219, 11);
+ }
+
+ .button img{
+    width: 35px;
+    height: 15px;
+ }
+
 
