@@ -71,39 +71,79 @@ nav{
     padding: 0px 15px 0px 15px;
 }
 
-/*.nav2 {
+.nav2 {
     background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .nav2 img{
     width: 250px;
-    height: 50px;                                           ;
+    height: 50px;                                           
+    display: flex;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    padding:10px 10px 10px 10px ;
  }
-
  .head{
     display: flex;
-    justify-content:space-between;
+    justify-content: center;
+    
+ }
+ #red{
+    color: red;
+ }
+ .buttons span{
+    margin: 0px 2px 0px 2px;
+ }
+
+ section{
+    display: none;
+ }
+ .products:hover ~ .section-1{
+    display: block;
+ }
+
+ .right-section2{
+    display: flex;
     color: black;
-    margin: opx 50px;
-    padding: 0px 20px 0px 20px;
- }
-
- .right-section span{
-    color: black;
+    border-bottom: 1px solid black;
+    width: 200px;
 
  }
-
- button{
-    border-radius: 50px;
+ div .search2{
+    margin: 0px 5px 5px 5px;
  }
 
- .button{
+
+div .search img{
+
+    width: 29px;
+    height: 19px;
+    margin: 0PX 2PX 0PX 2PX;
+    
+ }
+
+
+ .button .button2{
     background-color: rgb(219, 219, 11);
+    border-radius: 50px;
+    font-size: 10px;
+    width: 183px;
+    height: 41px;
+    margin: 0px 10px 0px 10px;
  }
 
  .button img{
     width: 35px;
     height: 15px;
+ }
+
+.nav2 .right2 img{
+    margin: 0PX 5PX 0PX 5PX;
+    width: 75px;
+    height: 55px;
  }
 
 

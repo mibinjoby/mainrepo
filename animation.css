@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+}
+.book{
+    background-color: rgb(220, 135, 30);
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+
+}
+.page{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+
+    animation: page1 5s ease-in-out 2s 4 forwards;
+
+}
+/*@keyframes page1 {
+    from{
+        width: 100px;
+    }
+    to{
+        width: 100%;
+    }
+}*/
+@keyframes page1 {
+   0% {
+    top: 0px;
+    left: 0px;
+
+    }
+    10%{
+        top: 400px;
+        left: 0px;
+    }
+    20%{
+        top: 400px;
+        left:200px;
+    }
+    30%{
+        top: 0px;
+        left:200px;
+    }
+    40%{
+        top: 0px;
+        left: 400px;
+    }
+    50%{
+        top: 400px;
+        left: 400px;
+    }
+    60%{
+        top: 400px; ;
+        left:600px ;
+    }
+    70%{
+        top: 0px;
+        left: 600px;
+    
+    }
+    80%{
+        top: 0px;
+        left: 800px;
+    }
+    90%{
+        top: 400px;
+        left: 800px;
+    }
+
+    
+}
