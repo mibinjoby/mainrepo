@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="colorButton">change</button>
+
+    <script> 
+    const button = document.getElementById('colorButton'); 
+    const colors = []; 
+    button.addEventListener('click', () => { 
+        if (colors.length > 0) { 
+            const randomColor = colors[Math.floor(Math.random() * colors.length)]; 
+            document.body.style.backgroundColor = randomColor; } 
+            else { loadColors(); 
+
+            } 
+        }); 
+        function loadColors() { 
+            const xhr = new XMLHttpRequest(); 
+            xhr.open('GET', 'colors.json', true); 
+            xhr.onreadystatechange = function () { 
+                if (xhr.readyState === 4 && xhr.status === 200) { 
+                    const response = JSON.parse(xhr.responseText); 
+                    colors.push(...response.colors); 
+                    button.click(); 
+                } 
+            }; 
+                xhr.send(); 
+            } 
+
+    </script> 
+</body>
+</html>

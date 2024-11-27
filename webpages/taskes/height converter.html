@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin-top: 50px;
+        }
+        .converter { display: inline-block; 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        } 
+        input, select, button { 
+            margin: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="converter"> 
+        <h2>Length Converter</h2> 
+        <input type="number" id="inputValue" placeholder="Enter value"> 
+        <select id="inputUnit"> <option value="meters">Meters</option> 
+            <option value="kilometers">Kilometers</option> 
+            <option value="centimeters">Centimeters</option> 
+            <option value="inches">Inches</option> 
+            <option value="feet">Feet</option>
+        </select>
+
+        <select id="outputUnit"> 
+            <option value="meters">Meters</option> 
+            <option value="kilometers">Kilometers</option> 
+            <option value="centimeters">Centimeters</option> 
+            <option value="inches">Inches</option> <option value="feet">Feet</option> 
+        </select> <br> 
+        <button onclick="convertLength()">Convert</button> 
+        <p id="result"></p> 
+    </div>
+
+    <script> 
+    function convertLength() { 
+    const inputValue = document.getElementById('inputValue').value; 
+    const inputUnit = document.getElementById('inputUnit').value; 
+    const outputUnit = document.getElementById('outputUnit').value; 
+
+    const xhr = new XMLHttpRequest(); 
+    xhr.open('GET', 'conversion-rates.json', true); 
+    xhr.onreadystatechange = function() { 
+        if (xhr.readyState === 4 && xhr.status === 200) { 
+            const conversionRates = JSON.parse(xhr.responseText); const valueInMeters = inputValue * conversionRates[inputUnit]; 
+            const outputValue = valueInMeters * (1 / conversionRates[outputUnit]); 
+            document.getElementById('result').textContent = `${inputValue} ${inputUnit} is equal to ${outputValue.toFixed(2)} ${outputUnit}`; 
+        } 
+    }; 
+            xhr.send(); } 
+    </script> 
+</body>
+</html>

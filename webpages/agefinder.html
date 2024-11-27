@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+     body { 
+        font-family: Arial, 
+        sans-serif; 
+        text-align: center; 
+        margin-top: 50px; 
+     } 
+     .age-calculator { 
+        display: inline-block; 
+        padding: 20px; 
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+     } 
+     input, button { 
+        margin: 10px; 
+     }
+     </style>
+</head>
+<body>
+    <div class="age-calculator"> 
+        <h2>Age Calculator</h2> 
+        <label for="dob">Date of Birth:</label> 
+        <input type="date" id="dob"><br> 
+        <label for="currentDate">Current Date:</label> 
+        <input type="date" id="currentDate"><br> 
+        <button onclick="calculateAge()">Calculate Age</button> 
+        <p id="result"></p> 
+    </div> 
+    <script>
+        function calculateAge()  { 
+         const dob = document.getElementById('dob').value; 
+         const currentDate = document.getElementById('currentDate').value; 
+         if (!dob || !currentDate) { 
+            document.getElementById('result').textContent = 'Please enter both dates.'; 
+            return; }
+
+            const xhr = new XMLHttpRequest(); 
+            xhr.open('GET', 'age-data.json', true); 
+            xhr.onreadystatechange = function() { 
+                if (xhr.readyState === 4 && xhr.status === 200) { 
+                    const data = JSON.parse(xhr.responseText); 
+                    const age = calculateAgeFromDates(new Date(dob), new Date(currentDate), data.monthLengths); 
+                    document.getElementById('result').textContent = `Your age is: ${age.years} years, ${age.months} months, and ${age.days} days.`;
+                } 
+                }; 
+                xhr.send(); 
+            }
+
+            function calculateAgeFromDates(dob, currentDate, monthLengths) {
+                 let years = currentDate.getFullYear() - dob.getFullYear(); 
+                 let months = currentDate.getMonth() - dob.getMonth(); 
+                 let days = currentDate.getDate() - dob.getDate(); 
+                 if (days < 0) { 
+                    months--; 
+                    days += monthLengths[(currentDate.getMonth() - 1 + 12) % 12]; 
+                } 
+                if (months < 0) { 
+                    years--; 
+                    months += 12; 
+                } 
+                return { years, months, days}; 
+            }
+       
+    </script>
+</body>
+</html>
